@@ -2,17 +2,17 @@ import type { Dificultad, Ruta } from "./rutas";
 
 export type Criterio = "precio" | "duracion";
 
-export function filtarPorDificultad(lista: Ruta[], didicultad: Dificultad){
+export function filtarPorDificultad(lista: Ruta[], didicultad: Dificultad) {
     return lista.filter((ruta) => ruta.dificultad === didicultad);
 }
 
 
-export function ordenarRutas(lista: Ruta[], criterio: Criterio){
-    const newlista = [...lista];
+export function ordenarRutas(rutas: Ruta[], criterio: Criterio, order: "asc" | "des" = "asc") {
+    const campo = criterio === "precio" ? "precio" : "duracionHoras";
 
 
-    if (criterio === "precio") {
-        return newlista.toSorted((a, b) => a.precio - b.precio);
-    }
-    return newlista.toSorted((a, b) => a.duracionHoras - b.duracionHoras);
+    return rutas.toSorted((a, b) =>
+        order === "asc"? a[campo] - b[campo]
+        : b[campo] - a[campo]
+    )
 }

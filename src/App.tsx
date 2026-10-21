@@ -7,8 +7,8 @@ import { rutas } from './datos/rutas';
 
 function App() {
 
-    const filtradas = filtarPorDificultad(rutas, "baja");
-    const visibles = ordenarRutas(filtradas, "precio");
+    //const filtradas = filtarPorDificultad(rutas, "todas");
+    const visibles = ordenarRutas(rutas, "precio");
 
     return (
         <div>

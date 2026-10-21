@@ -1,4 +1,5 @@
 import type { Ruta } from "../datos/rutas";
+import "./Tarjeta.css"
 
 interface Props {
   ruta: Ruta;
@@ -8,15 +9,44 @@ interface Props {
 export function TarjetaRuta({ ruta }: Props) {
   return (
     <article className="tarjeta">
-      <h3>{ruta.nombre}</h3>
-      <p>Municipio: {ruta.municipio}</p>
-      <p>Duración: {ruta.duracionHoras} horas</p>
-      <p>Precio: ${ruta.precio} pesos</p>
-      <p>Dificultad: {ruta.dificultad}</p>
-      <input type="3" aria-label="Personas" />
+      <div className="tarjeta-icono">🌿</div>
 
-      {ruta.incluyeTransporte && <p>Incluye Transporte</p>}
-      <p>{ruta.duracionHoras < 5 ? "Ruta corta" : "Jornada completa" }</p>
+      <h3>{ruta.nombre}</h3>
+
+      <div className="tarjeta-detalles">
+        <p>
+          <span>📍</span>
+          <strong>Municipio:</strong> {ruta.municipio}
+        </p>
+
+        <p>
+          <span>⏳</span>
+          <strong>Duración:</strong> {ruta.duracionHoras} horas
+        </p>
+
+        <p>
+          <span>💰</span>
+          <strong>Precio:</strong> ${ruta.precio} pesos
+        </p>
+
+        <p>
+          <span>🥾</span>
+          <strong>Dificultad:</strong> {ruta.dificultad}
+        </p>
+      </div>
+
+      {ruta.incluyeTransporte && (
+        <p className="transporte">🚐 Incluye transporte</p>
+      )}
+
+      <div className="tarjeta-pie">
+        <span className="etiqueta">
+          {ruta.duracionHoras < 5
+            ? "⚡ Ruta corta"
+            : "🌅 Jornada completa"}
+        </span>
+        <span className="hoja">✦</span>
+      </div>
     </article>
   );
 }

@@ -1,0 +1,121 @@
+.tarjeta {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  margin: 20px 0;
+  border-radius: 22px;
+
+  background: linear-gradient(
+    145deg,
+    #102f26 0%,
+    #174b38 55%,
+    #0b211c 100%
+  );
+
+  color: #f4f1df;
+  border: 1px solid rgba(218, 180, 95, 0.45);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.3),
+    inset 0 0 25px rgba(205, 164, 74, 0.05);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Brillo decorativo */
+.tarjeta::before {
+  content: "";
+  position: absolute;
+  top: -65px;
+  right: -65px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(218, 180, 95, 0.12);
+  pointer-events: none;
+}
+
+/* Efecto al pasar el cursor */
+.tarjeta:hover {
+  transform: translateY(-8px);
+  border-color: #e4bd68;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 22px rgba(218, 180, 95, 0.13);
+}
+
+.tarjeta-icono {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.tarjeta h3 {
+  color: #e7c675;
+  font-size: 25px;
+  margin: 0 0 22px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(218, 180, 95, 0.4);
+  padding-bottom: 14px;
+}
+
+.tarjeta-detalles p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 15px 0;
+  color: #e1e9dd;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.tarjeta-detalles p span {
+  min-width: 22px;
+  font-size: 17px;
+}
+
+.tarjeta-detalles strong {
+  color: #e7c675;
+  font-weight: 600;
+}
+
+.transporte {
+  display: inline-block;
+  padding: 9px 13px;
+  border: 1px solid rgba(218, 180, 95, 0.5);
+  border-radius: 20px;
+  background: rgba(218, 180, 95, 0.1);
+  color: #f0d99d;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+
+.tarjeta-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(218, 180, 95, 0.25);
+}
+
+.etiqueta {
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: #d7b45b;
+  color: #102f26;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hoja {
+  color: #e7c675;
+  font-size: 24px;
+}
