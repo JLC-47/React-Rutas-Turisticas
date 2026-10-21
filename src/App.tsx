@@ -1,11 +1,22 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+
 import './App.css'
+import { ListaRutas } from './components/ListaRutas';
+import { filtarPorDificultad, ordenarRutas } from './datos/filtros';
+
+import { rutas } from './datos/rutas';
 
 function App() {
-  
+
+    const filtradas = filtarPorDificultad(rutas, "baja");
+    const visibles = ordenarRutas(filtradas, "precio");
+
+    return (
+        <div>
+            <h1>Rutas turísticas del Quindío</h1>
+            <p>Se encontraron {visibles.length} rutas</p>
+            <ListaRutas rutas={visibles} />
+        </div>
+    );
 }
 
 export default App
